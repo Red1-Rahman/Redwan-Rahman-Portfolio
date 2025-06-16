@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
+import { generateRandomColors } from './utils/randomColors';
 import './App.css';
 
 function MainContent() {
   return (
     <div className="App">
       <header className="hero">
+        <div className="profile-container">
+          <img 
+            src="/assets/images/My Formal Pic.jpg" 
+            alt="Redwan Rahman" 
+            className="profile-picture"
+          />
+        </div>
         <h1>Redwan Rahman</h1>
         <p>AI/ML Developer | Game Developer | Quantum Programmer</p>
         <Link to="/about" className="about-button">About Me</Link>
@@ -49,12 +57,67 @@ function MainContent() {
       <section className="section" id="certificates">
         <h2>Certificates</h2>
         <ul>
-          <li>Data Science Math Skills by Duke University</li>
-          <li>Python Basics by University of Michigan</li>
-          <li>Machine Learning with Python by IBM</li>
-          <li>Intro to Machine Learning by Kaggle</li>
-          <li>Deep Learning with Keras and TensorFlow by IBM</li>
-          <li>Feature Engineering by Google Cloud</li>
+          <li>
+            <a 
+              href="https://coursera.org/share/74044cdebfe2d219bd2848b9e2131dd1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Data Science Math Skills by Duke University
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://coursera.org/share/3ec38798eb25b6d1fd4f02318a7c9564"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Python Basics by University of Michigan
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://coursera.org/share/6466ec5da646189a9c0be0a282599bcb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Machine Learning with Python by IBM
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-machine-learning"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Intro to Machine Learning by Kaggle
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://coursera.org/share/bbd7cc45b7923ab8aebe6590a6d46db1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Deep Learning with Keras and TensorFlow by IBM
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://coursera.org/share/18e299932ad4ef3b99c044574f155265"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Feature Engineering by Google Cloud
+            </a>
+          </li>
+          <li>GALACTIC PROBLEM SOLVER by NASA International Space Apps Challenge</li>
           <li>Finalist, Unlock The Algorithm Spring 2024 by Daffodil International University</li>
           <li>Finalist, Take Off programming contest 2022 by Daffodil International University</li>
         </ul>
@@ -68,12 +131,29 @@ function MainContent() {
         </ul>
       </section>
 
+      <section className="section" id="patents">
+        <h2>Patents</h2>
+        <ul>
+          <li>
+            <a 
+              href="https://data.mendeley.com/datasets/m7w55sw88b/1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="patent-link"
+            >
+              PMRAM: Bangladeshi Brain Cancer - MRI Dataset
+            </a>
+            <p className="doi">DOI: 10.17632/m7w55sw88b.1</p>
+          </li>
+        </ul>
+      </section>
+
       <footer className="footer">
         <a href="https://www.linkedin.com/in/redwan-rahman-13098a34b/" 
            target="_blank" 
            rel="noopener noreferrer"
            className="linkedin-link">
-          Connect on LinkedIn
+          Connect with me on LinkedIn
         </a>
         <a href="https://github.com/Red1-Rahman/" 
            target="_blank" 
@@ -87,6 +167,14 @@ function MainContent() {
 }
 
 function App() {
+  useEffect(() => {
+    const updateBackground = () => {
+      document.body.style.background = generateRandomColors();
+    };
+    
+    updateBackground();
+  }, []);
+
   return (
     <Router>
       <Routes>
