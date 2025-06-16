@@ -132,7 +132,7 @@ function MainContent() {
       </section>
 
       <section className="section" id="patents">
-        <h2>Patents</h2>
+        <h2>Research Datasets</h2>
         <ul>
           <li>
             <a 
