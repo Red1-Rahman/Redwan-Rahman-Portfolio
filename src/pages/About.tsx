@@ -23,7 +23,7 @@ const About = () => {
         <section className="about-section">
           <h2>Technical Expertise</h2>
           <p>
-            My expertise spans across AI/ML development, Game Development, and Quantum Computing, 
+            My expertise spans across AI/ML Development, Game Development, and Quantum Computing, 
             complemented by a theoretical foundation in Quantum Physics and Astrophysics.
           </p>
         </section>
