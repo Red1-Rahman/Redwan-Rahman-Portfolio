@@ -21,7 +21,7 @@ const About = () => {
           </p>
         </section>
 
-        <section className="about-section">
+        <section className="about-section halo-horizons">
           <h2>Entrepreneurial & Project Leadership</h2>
           <p>
             As the Team Leader of Halo Horizons, I lead innovative efforts to solve urban pollution through bioengineered moss walls. Our team was a Finalist in both the Hult Prize 2025 and Orange Corners Ideation Challenge 4.0. These experiences allowed me to blend cutting-edge technology with environmental sustainability and social impact, managing high-impact projects from ideation to execution.
