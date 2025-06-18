@@ -1,4 +1,3 @@
-/* About.css */
 .about-container {
   max-width: 800px;
   margin: 40px auto;
@@ -44,24 +43,4 @@
   line-height: 1.6;
   color: #555;
   font-size: 1.1em;
-}
-
-/* Halo Horizons green nature theme with subtle SVG pattern */
-.halo-horizons {
-  background-color: #f4fbf6;
-  background-image: url("data:image/svg+xml;utf8,<svg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'><circle cx='20' cy='20' r='2' fill='%234caf50' fill-opacity='0.1'/><circle cx='10' cy='10' r='2' fill='%234caf50' fill-opacity='0.1'/><circle cx='30' cy='30' r='2' fill='%234caf50' fill-opacity='0.1'/></svg>");
-  background-repeat: repeat;
-  background-size: 40px 40px;
-  border-left: 6px solid #4caf50;
-  padding-left: 20px;
-  border-radius: 8px;
-}
-
-.halo-horizons h2 {
-  color: #2e7d32;
-}
-
-.halo-horizons p {
-  color: #33691e;
-  font-weight: 500;
 }

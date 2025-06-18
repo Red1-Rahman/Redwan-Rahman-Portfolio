@@ -322,6 +322,16 @@ body {
   color: #0077b5;
 }
 
+.project-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #0077b5;
+}
+
 .patent-link {
   color: #2196f3;
   text-decoration: none;
