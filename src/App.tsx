@@ -46,22 +46,22 @@ function MainContent() {
       </section>
 
       <section className="section" id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>ML based astronomical object classifier</li>
-    <li>ML based MRI brain tumor detector</li>
-    <li>
-      <a 
-        href="https://connect-4-with-ai-opponent.netlify.app" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-      >
-        Some board games with AI opponents
-      </a>
-    </li>
-  </ul>
-</section>
+        <h2>Projects</h2>
+        <ul>
+          <li>ML based astronomical object classifier</li>
+          <li>ML based MRI brain tumor detector</li>
+          <li>
+            <a 
+              href="https://connect-4-with-ai-opponent.netlify.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              Some board games with AI opponents
+            </a>
+          </li>
+        </ul>
+      </section>
 
       <section className="section" id="certificates">
         <h2>Certificates</h2>
@@ -104,6 +104,16 @@ function MainContent() {
               className="certificate-link"
             >
               Intro to Machine Learning by Kaggle
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-game-ai-and-reinforcement-learning"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Intro to Game AI and Reinforcement Learning by Kaggle
             </a>
           </li>
           <li>
