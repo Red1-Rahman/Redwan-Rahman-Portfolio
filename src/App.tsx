@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
+import Articles from './pages/Articles';
 import { generateRandomColors } from './utils/randomColors';
 import './App.css';
 
@@ -17,7 +18,10 @@ function MainContent() {
         </div>
         <h1>Redwan Rahman</h1>
         <p>AI/ML Developer | Game Developer | Quantum Programmer</p>
-        <Link to="/about" className="about-button">About Me</Link>
+        <div className="hero-buttons">
+          <Link to="/about" className="about-button">About Me</Link>
+          <Link to="/articles" className="articles-button">My Articles</Link>
+        </div>
       </header>
 
       <section className="section" id="skills">
@@ -219,6 +223,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainContent />} />
         <Route path="/about" element={<About />} />
+        <Route path="/articles" element={<Articles />} />
       </Routes>
     </Router>
   );
