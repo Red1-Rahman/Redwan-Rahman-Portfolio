@@ -118,6 +118,26 @@ function MainContent() {
           </li>
           <li>
             <a 
+              href="https://cursa.app/en/my-certificate/cert0b72aa6bd33ff447f2a2d3a10a4058e2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Intro to C++ Game Programming
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://cursa.app/en/my-certificate/cert19bec9533d2b4e0aee65ca50cf316ba9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
+            >
+              Unreal Engine 5 Complete Tutorials
+            </a>
+          </li>
+          <li>
+            <a 
               href="https://coursera.org/share/bbd7cc45b7923ab8aebe6590a6d46db1"
               target="_blank"
               rel="noopener noreferrer"
