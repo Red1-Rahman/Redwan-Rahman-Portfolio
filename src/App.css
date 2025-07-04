@@ -1,257 +1,16 @@
-.App {
-  text-align: left;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+/* Add this to your existing App.css file */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 15px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes randomGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, 
-    rgba(26, 26, 26, 0.9) 0%, 
-    rgba(42, 42, 42, 0.8) 100%
-  );
-  color: white;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg,
-    rgba(26, 26, 26, 0.95) 0%,
-    rgba(42, 42, 42, 0.85) 100%
-  );
-}
-
-.hero h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-.section {
-  margin-bottom: 40px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.section:nth-child(3n+1) {
-  border-left: 4px solid #ee7752;
-}
-
-.section:nth-child(3n+2) {
-  border-left: 4px solid #23a6d5;
-}
-
-.section:nth-child(3n+3) {
-  border-left: 4px solid #23d5ab;
-}
-
-.section:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.section:nth-child(3n+1):hover {
-  box-shadow: 0 12px 20px rgba(238, 119, 82, 0.2);
-}
-
-.section:nth-child(3n+2):hover {
-  box-shadow: 0 12px 20px rgba(35, 166, 213, 0.2);
-}
-
-.section:nth-child(3n+3):hover {
-  box-shadow: 0 12px 20px rgba(35, 213, 171, 0.2);
-}
-
-.section h2 {
-  color: #333;
-  border-bottom: 2px solid #333;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.skill-category {
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-}
-
-.skill-category:hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  animation: shine 1s ease;
-}
-
-@keyframes shine {
-  to {
-    left: 100%;
-  }
-}
-
-.skill-category h3 {
-  color: #2a2a2a;
-  margin-bottom: 10px;
-}
-
-.skill-category h4 {
-  color: #555;
-  margin: 10px 0 5px 0;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-li {
-  margin-bottom: 10px;
-  padding: 10px;
-  background: rgba(245, 245, 245, 0.8);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-li:hover {
-  transform: translateX(15px);
-  padding-left: 25px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.footer {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 480px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .github-link {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-}
-
-.linkedin-link {
-  color: #0077b5;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 10px 20px;
-  border: 2px solid #0077b5;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.linkedin-link:hover {
-  background-color: #0077b5;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.github-link {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 10px 20px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  margin-left: 10px;
-}
-
-.github-link:hover {
-  background-color: #333;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.about-button {
-  display: inline-block;
   margin-top: 20px;
+}
+
+.about-button,
+.articles-button {
+  display: inline-block;
   padding: 10px 25px;
   background-color: white;
   color: #1a1a1a;
@@ -264,7 +23,8 @@ li:hover {
   z-index: 1;
 }
 
-.about-button::before {
+.about-button::before,
+.articles-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -276,76 +36,36 @@ li:hover {
   z-index: -1;
 }
 
-.about-button:hover::before {
+.about-button:hover::before,
+.articles-button:hover::before {
   left: 100%;
 }
 
-.about-button:hover {
+.about-button:hover,
+.articles-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(
-    45deg,
-    hsla(${Math.random() * 360}, 70%, 80%, 0.8),
-    hsla(${Math.random() * 360}, 70%, 80%, 0.8),
-    hsla(${Math.random() * 360}, 70%, 80%, 0.8)
-  );
-  background-size: 300% 300%;
-  animation: randomGradient 15s ease infinite;
-  min-height: 100vh;
+.articles-button {
+  background: linear-gradient(45deg, #ee7752, #23a6d5);
+  color: white;
 }
 
-.profile-container {
-  margin-bottom: 20px;
+.articles-button:hover {
+  background: linear-gradient(45deg, #e85d3d, #1e8bb3);
 }
 
-.profile-picture {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.certificate-link {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.certificate-link:hover {
-  color: #0077b5;
-}
-
-.project-link {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.project-link:hover {
-  color: #0077b5;
-}
-
-.patent-link {
-  color: #2196f3;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.patent-link:hover {
-  color: #1976d2;
-  text-decoration: underline;
-}
-
-.doi {
-  color: #666;
-  font-size: 0.9em;
-  margin-top: 5px;
+/* Mobile responsiveness for hero buttons */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-button,
+  .articles-button {
+    width: 200px;
+    text-align: center;
+  }
 }
