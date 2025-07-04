@@ -249,42 +249,6 @@ li:hover {
   transform: translateY(-2px);
 }
 
-.about-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
-  background-color: white;
-  color: #1a1a1a;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.about-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
-  z-index: -1;
-}
-
-.about-button:hover::before {
-  left: 100%;
-}
-
-.about-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -362,7 +326,6 @@ body {
 .articles-button {
   display: inline-block;
   padding: 10px 25px;
-  background-color: white;
   color: #1a1a1a;
   text-decoration: none;
   border-radius: 5px;
@@ -371,6 +334,21 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  /* Fixed sizing properties */
+  min-width: 120px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.about-button {
+  background-color: white;
+}
+
+.articles-button {
+  background: linear-gradient(45deg, #ee7752, #23a6d5);
+  color: white;
 }
 
 .about-button::before,
@@ -395,11 +373,6 @@ body {
 .articles-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.articles-button {
-  background: linear-gradient(45deg, #ee7752, #23a6d5);
-  color: white;
 }
 
 .articles-button:hover {
