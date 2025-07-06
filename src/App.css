@@ -388,9 +388,13 @@ body {
   background: linear-gradient(45deg, #e85d3d, #1e8bb3);
 }
 
-.poems-button:hover {
-  background: linear-gradient(45deg, #1eb892, #e85d3d);
+.poems-button {
+  background: linear-gradient(45deg, #23d5ab, #ee7752);
+  color: white;
+  font-weight: bold;
+  border: 2px solid #23d5ab;
 }
+
 
 /* Mobile responsiveness for hero buttons */
 @media (max-width: 480px) {
