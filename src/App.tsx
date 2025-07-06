@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
 import Articles from './pages/Articles';
-import Poems from './pages/Poems';
+import Poems from './pages/poems';
 import { generateRandomColors } from './utils/randomColors';
 import './App.css';
 
