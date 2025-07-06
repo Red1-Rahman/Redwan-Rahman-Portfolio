@@ -35,6 +35,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -44,9 +45,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -55,10 +58,9 @@
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, 
-    rgba(26, 26, 26, 0.9) 0%, 
-    rgba(42, 42, 42, 0.8) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(26, 26, 26, 0.9) 0%,
+      rgba(42, 42, 42, 0.8) 100%);
   color: white;
   border-radius: 10px;
   margin-bottom: 40px;
@@ -71,9 +73,8 @@
   transform: scale(1.02);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   background: linear-gradient(135deg,
-    rgba(26, 26, 26, 0.95) 0%,
-    rgba(42, 42, 42, 0.85) 100%
-  );
+      rgba(26, 26, 26, 0.95) 0%,
+      rgba(42, 42, 42, 0.85) 100%);
 }
 
 .hero h1 {
@@ -146,12 +147,10 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   animation: shine 1s ease;
 }
 
@@ -252,12 +251,23 @@ li:hover {
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(
-    45deg,
-    hsla(${Math.random() * 360}, 70%, 80%, 0.8),
-    hsla(${Math.random() * 360}, 70%, 80%, 0.8),
-    hsla(${Math.random() * 360}, 70%, 80%, 0.8)
-  );
+
+  background: linear-gradient(45deg,
+    hsla($ {
+        Math.random() * 360
+      }
+
+      , 70%, 80%, 0.8),
+    hsla($ {
+        Math.random() * 360
+      }
+
+      , 70%, 80%, 0.8),
+    hsla($ {
+        Math.random() * 360
+      }
+
+      , 70%, 80%, 0.8));
   background-size: 300% 300%;
   animation: randomGradient 15s ease infinite;
   min-height: 100vh;
@@ -323,7 +333,8 @@ body {
 }
 
 .about-button,
-.articles-button {
+.articles-button,
+.poems-button {
   display: inline-block;
   padding: 10px 25px;
   color: #1a1a1a;
@@ -351,8 +362,14 @@ body {
   color: white;
 }
 
+.poems-button {
+  background: linear-gradient(45deg, #23d5ab, #ee7752);
+  color: white;
+}
+
 .about-button::before,
-.articles-button::before {
+.articles-button::before,
+.poems-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -365,12 +382,14 @@ body {
 }
 
 .about-button:hover::before,
-.articles-button:hover::before {
+.articles-button:hover::before,
+.poems-button:hover::before {
   left: 100%;
 }
 
 .about-button:hover,
-.articles-button:hover {
+.articles-button:hover,
+.poems-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -379,15 +398,20 @@ body {
   background: linear-gradient(45deg, #e85d3d, #1e8bb3);
 }
 
+.poems-button:hover {
+  background: linear-gradient(45deg, #1eb892, #e85d3d);
+}
+
 /* Mobile responsiveness for hero buttons */
 @media (max-width: 480px) {
   .hero-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .about-button,
-  .articles-button {
+  .articles-button,
+  .poems-button {
     width: 200px;
     text-align: center;
   }

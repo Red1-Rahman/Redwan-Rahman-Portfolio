@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
 import Articles from './pages/Articles';
+import Poems from './pages/Poems';
 import { generateRandomColors } from './utils/randomColors';
 import './App.css';
 
@@ -10,9 +11,9 @@ function MainContent() {
     <div className="App">
       <header className="hero">
         <div className="profile-container">
-          <img 
-            src="/assets/images/My Formal Pic.jpg" 
-            alt="Redwan Rahman" 
+          <img
+            src="/assets/images/My Formal Pic.jpg"
+            alt="Redwan Rahman"
             className="profile-picture"
           />
         </div>
@@ -21,12 +22,13 @@ function MainContent() {
         <div className="hero-buttons">
           <Link to="/about" className="about-button">About Me</Link>
           <Link to="/articles" className="articles-button">My Articles</Link>
+          <Link to="/poems" className="poems-button">Poems</Link>
         </div>
       </header>
 
       <section className="section" id="skills">
         <h2>Skills</h2>
-        
+
         <div className="skill-category">
           <h3>AI/ML Development</h3>
           <p>Machine Learning, Deep Learning, Data Science, Apache Beam, Dataflow, Feature Engineering</p>
@@ -55,9 +57,9 @@ function MainContent() {
           <li>ML based astronomical object classifier</li>
           <li>ML based MRI brain tumor detector</li>
           <li>
-            <a 
-              href="https://connect-4-with-ai-opponent.netlify.app" 
-              target="_blank" 
+            <a
+              href="https://connect-4-with-ai-opponent.netlify.app"
+              target="_blank"
               rel="noopener noreferrer"
               className="project-link"
             >
@@ -71,7 +73,7 @@ function MainContent() {
         <h2>Certificates</h2>
         <ul>
           <li>
-            <a 
+            <a
               href="https://coursera.org/share/74044cdebfe2d219bd2848b9e2131dd1"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,7 +83,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://coursera.org/share/3ec38798eb25b6d1fd4f02318a7c9564"
               target="_blank"
               rel="noopener noreferrer"
@@ -91,7 +93,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://coursera.org/share/6466ec5da646189a9c0be0a282599bcb"
               target="_blank"
               rel="noopener noreferrer"
@@ -101,7 +103,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-machine-learning"
               target="_blank"
               rel="noopener noreferrer"
@@ -111,7 +113,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-game-ai-and-reinforcement-learning"
               target="_blank"
               rel="noopener noreferrer"
@@ -121,7 +123,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://cursa.app/en/my-certificate/cert0b72aa6bd33ff447f2a2d3a10a4058e2"
               target="_blank"
               rel="noopener noreferrer"
@@ -131,7 +133,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://cursa.app/en/my-certificate/cert19bec9533d2b4e0aee65ca50cf316ba9"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +143,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://coursera.org/share/bbd7cc45b7923ab8aebe6590a6d46db1"
               target="_blank"
               rel="noopener noreferrer"
@@ -151,7 +153,7 @@ function MainContent() {
             </a>
           </li>
           <li>
-            <a 
+            <a
               href="https://coursera.org/share/18e299932ad4ef3b99c044574f155265"
               target="_blank"
               rel="noopener noreferrer"
@@ -178,9 +180,9 @@ function MainContent() {
         <h2>Research Datasets</h2>
         <ul>
           <li>
-            <a 
-              href="https://data.mendeley.com/datasets/m7w55sw88b/1" 
-              target="_blank" 
+            <a
+              href="https://data.mendeley.com/datasets/m7w55sw88b/1"
+              target="_blank"
               rel="noopener noreferrer"
               className="patent-link"
             >
@@ -192,16 +194,16 @@ function MainContent() {
       </section>
 
       <footer className="footer">
-        <a href="https://www.linkedin.com/in/redwan-rahman-13098a34b/" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           className="linkedin-link">
+        <a href="https://www.linkedin.com/in/redwan-rahman-13098a34b/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="linkedin-link">
           Connect with me on LinkedIn
         </a>
-        <a href="https://github.com/Red1-Rahman/" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           className="github-link">
+        <a href="https://github.com/Red1-Rahman/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-link">
           View on GitHub
         </a>
       </footer>
@@ -214,7 +216,7 @@ function App() {
     const updateBackground = () => {
       document.body.style.background = generateRandomColors();
     };
-    
+
     updateBackground();
   }, []);
 
@@ -224,6 +226,7 @@ function App() {
         <Route path="/" element={<MainContent />} />
         <Route path="/about" element={<About />} />
         <Route path="/articles" element={<Articles />} />
+        <Route path="/poems" element={<Poems />} />
       </Routes>
     </Router>
   );
