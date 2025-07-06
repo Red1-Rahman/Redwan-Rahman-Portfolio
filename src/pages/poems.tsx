@@ -51,13 +51,6 @@ const Poems: React.FC = () => {
                             >
                                 ⬇️ Download PDF
                             </a>
-                            <Link
-                                to="/poems-aside"
-                                className="poem-aside-btn"
-                                style={{ marginLeft: 10 }}
-                            >
-                                📝 Poems Aside
-                            </Link>
                         </div>
                     </article>
                 ))}
