@@ -57,6 +57,27 @@
     background-clip: text;
 }
 
+.poem-header-download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #23d5ab, #ee7752);
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.poem-header-download-btn:hover {
+    background: linear-gradient(45deg, #1eb892, #e85d3d);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(35, 213, 171, 0.3);
+}
+
 .poem-download-btn {
     display: inline-block;
     margin-top: 20px;
@@ -80,7 +101,7 @@
 
 .poems-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -159,10 +180,11 @@
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.9em;
+    font-size: 0.95em;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    margin-top: 0;
 }
 
 .poem-read-btn {
@@ -201,24 +223,25 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .poems-container {
-        padding: 15px;
+        padding: 10px;
     }
 
     .poems-list {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
 
     .poems-header h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .poem-item {
-        padding: 20px;
+        padding: 14px;
     }
 
     .poem-actions {
         flex-direction: column;
+        gap: 10px;
     }
 
     .poem-read-btn,
@@ -226,19 +249,25 @@
     .poem-aside-btn {
         width: 100%;
         justify-content: center;
+        font-size: 1em;
+        padding: 14px 0;
     }
 }
 
 @media (max-width: 480px) {
     .poems-header {
-        padding: 30px 15px;
+        padding: 18px 5px;
     }
 
     .poems-header h1 {
-        font-size: 1.8em;
+        font-size: 1.3em;
     }
 
     .poem-title {
-        font-size: 1.3em;
+        font-size: 1.1em;
+    }
+
+    .poem-item {
+        padding: 8px;
     }
 }

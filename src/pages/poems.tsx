@@ -24,7 +24,7 @@ const Poems: React.FC = () => {
                 <h1>Poems</h1>
                 <a
                     href="/assets/Poetry/Poetic Stoic.pdf"
-                    className="poem-download-btn"
+                    className="poem-header-download-btn"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -40,7 +40,6 @@ const Poems: React.FC = () => {
                             <button
                                 onClick={() => handlePDFView(poem.pdfUrl)}
                                 className="poem-read-btn"
-                                style={{ marginRight: 10 }}
                             >
                                 📄 Read PDF
                             </button>

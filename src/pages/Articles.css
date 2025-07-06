@@ -9,10 +9,9 @@
   text-align: center;
   margin-bottom: 50px;
   padding: 40px 20px;
-  background: linear-gradient(135deg, 
-    rgba(26, 26, 26, 0.9) 0%, 
-    rgba(42, 42, 42, 0.8) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(26, 26, 26, 0.9) 0%,
+      rgba(42, 42, 42, 0.8) 100%);
   color: white;
   border-radius: 15px;
   backdrop-filter: blur(10px);
@@ -28,19 +27,25 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   animation: shine 3s ease-in-out infinite;
 }
 
 @keyframes shine {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 .back-button {
@@ -79,7 +84,7 @@
 
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   margin-bottom: 50px;
 }
@@ -109,9 +114,17 @@
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .article-card:hover {
@@ -233,47 +246,58 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .articles-container {
-    padding: 15px;
+    padding: 10px;
   }
-  
+
   .articles-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
-  
+
   .articles-header h1 {
-    font-size: 2.2em;
+    font-size: 2em;
   }
-  
+
   .article-card {
-    padding: 20px;
+    padding: 14px;
   }
-  
+
   .article-actions {
     flex-direction: column;
+    gap: 10px;
   }
-  
+
   .pdf-button,
   .download-button {
     width: 100%;
     justify-content: center;
+    font-size: 1em;
+    padding: 14px 0;
   }
 }
 
 @media (max-width: 480px) {
   .articles-header {
-    padding: 30px 15px;
+    padding: 18px 5px;
   }
-  
+
   .articles-header h1 {
-    font-size: 1.8em;
-  }
-  
-  .articles-subtitle {
-    font-size: 1em;
-  }
-  
-  .article-title {
     font-size: 1.3em;
+  }
+
+  .articles-subtitle {
+    font-size: 0.95em;
+  }
+
+  .article-title {
+    font-size: 1.1em;
+  }
+
+  .article-card {
+    padding: 8px;
+  }
+
+  .articles-footer {
+    padding: 18px 5px;
   }
 }
