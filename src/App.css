@@ -253,21 +253,9 @@ body {
   font-family: 'Arial', sans-serif;
 
   background: linear-gradient(45deg,
-    hsla($ {
-        Math.random() * 360
-      }
-
-      , 70%, 80%, 0.8),
-    hsla($ {
-        Math.random() * 360
-      }
-
-      , 70%, 80%, 0.8),
-    hsla($ {
-        Math.random() * 360
-      }
-
-      , 70%, 80%, 0.8));
+      hsla(200, 70%, 80%, 0.8),
+      hsla(320, 70%, 80%, 0.8),
+      hsla(120, 70%, 80%, 0.8));
   background-size: 300% 300%;
   animation: randomGradient 15s ease infinite;
   min-height: 100vh;
@@ -365,6 +353,8 @@ body {
 .poems-button {
   background: linear-gradient(45deg, #23d5ab, #ee7752);
   color: white;
+  font-weight: bold;
+  border: 2px solid #23d5ab;
 }
 
 .about-button::before,
