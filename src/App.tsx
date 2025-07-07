@@ -51,23 +51,34 @@ function MainContent() {
         </div>
       </section>
 
-      <section className="section" id="projects">
-        <h2>Projects</h2>
-        <ul>
-          <li>ML based astronomical object classifier</li>
-          <li>ML based MRI brain tumor detector</li>
-          <li>
-            <a
-              href="https://connect-4-with-ai-opponent.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              Some board games with AI opponents
-            </a>
-          </li>
-        </ul>
-      </section>
+<section className="section" id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>ML based astronomical object classifier</li>
+    <li>ML based MRI brain tumor detector</li>
+    <li>
+      <a
+        href="https://connect-4-with-ai-opponent.netlify.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        Some board games with AI opponents
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://quantum-galton-board-generator.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        Quantum Galton Board Generator
+      </a>
+    </li>
+  </ul>
+</section>
+
 
       <section className="section" id="certificates">
         <h2>Certificates</h2>
