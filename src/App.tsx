@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
 import Articles from './pages/Articles';
-import Poems from './pages/poems'; // Fixed: Changed from './pages/poems' to match your file structure
+import Poems from './pages/poems';
 import { generateRandomColors } from './utils/randomColors';
 import './App.css';
 
@@ -10,19 +10,29 @@ function MainContent() {
   const [showMessage, setShowMessage] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleCVDownload = (type) => {
+  const handleCVDownload = (type: string) => {
     setIsDropdownOpen(false);
     
     if (type === 'quantum') {
-      // Download the quantum CV
-      const link = document.createElement('a');
-      link.href = '/assets/CV/Redwan Rahman Quantum CV.pdf';
-      link.download = 'Redwan Rahman Quantum CV.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      try {
+        // Download the quantum CV
+        const link = document.createElement('a');
+        link.href = '/assets/CV/Redwan Rahman Quantum CV.pdf';
+        link.download = 'Redwan Rahman Quantum CV.pdf';
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error('Error downloading CV:', error);
+        // Show message if download fails
+        setShowMessage(true);
+        setTimeout(() => {
+          setShowMessage(false);
+        }, 2000);
+      }
     } else {
-      // Show message for other types
+      // Show message for other types (AI/ML and Game Developer)
       setShowMessage(true);
       setTimeout(() => {
         setShowMessage(false);
@@ -34,35 +44,79 @@ function MainContent() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const dropdown = document.querySelector('.cv-dropdown-container');
+      if (dropdown && !dropdown.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
   return (
     <div className="App">
+      {/* CV Dropdown Button */}
       <div className="cv-dropdown-container">
-        <button className="cv-dropdown-button" onClick={toggleDropdown}>
-          Download CV ▼
+        <button 
+          className="cv-dropdown-button" 
+          onClick={toggleDropdown}
+          aria-expanded={isDropdownOpen}
+          aria-haspopup="true"
+        >
+          Download CV
+          <span style={{ 
+            transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transition: 'transform 0.3s ease',
+            display: 'inline-block'
+          }}>
+            ▼
+          </span>
         </button>
+        
         {isDropdownOpen && (
-          <div className="cv-dropdown-menu">
+          <div className="cv-dropdown-menu" role="menu">
             <button 
               className="cv-dropdown-item" 
               onClick={() => handleCVDownload('aiml')}
+              role="menuitem"
             >
               AI/ML Developer
             </button>
             <button 
               className="cv-dropdown-item" 
               onClick={() => handleCVDownload('quantum')}
+              role="menuitem"
             >
               Quantum Developer
             </button>
             <button 
               className="cv-dropdown-item" 
               onClick={() => handleCVDownload('game')}
+              role="menuitem"
             >
               Game Developer
             </button>
           </div>
         )}
       </div>
+
+      {/* Message Overlay */}
+      {showMessage && (
+        <div className="message-overlay" onClick={() => setShowMessage(false)}>
+          <div className="message-content" onClick={(e) => e.stopPropagation()}>
+            Content has not uploaded yet
+          </div>
+        </div>
+      )}
 
       <header className="hero">
         <div className="profile-container">
@@ -79,14 +133,6 @@ function MainContent() {
           <Link to="/articles" className="articles-button">My Articles</Link>
           <Link to="/poems" className="poems-button">📜 Poems</Link>
         </div>
-
-        {showMessage && (
-          <div className="message-overlay">
-            <div className="message-content">
-              Content has not uploaded yet
-            </div>
-          </div>
-        )}
       </header>
 
       <section className="section" id="skills">
@@ -114,34 +160,33 @@ function MainContent() {
         </div>
       </section>
 
-<section className="section" id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>ML based astronomical object classifier</li>
-    <li>ML based MRI brain tumor detector</li>
-    <li>
-      <a
-        href="https://connect-4-with-ai-opponent.netlify.app"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="project-link"
-      >
-        Some board games with AI opponents
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://quantum-galton-board-generator.netlify.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="project-link"
-      >
-        Quantum Galton Board Generator
-      </a>
-    </li>
-  </ul>
-</section>
-
+      <section className="section" id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>ML based astronomical object classifier</li>
+          <li>ML based MRI brain tumor detector</li>
+          <li>
+            <a
+              href="https://connect-4-with-ai-opponent.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              Some board games with AI opponents
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://quantum-galton-board-generator.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              Quantum Galton Board Generator
+            </a>
+          </li>
+        </ul>
+      </section>
 
       <section className="section" id="certificates">
         <h2>Certificates</h2>
