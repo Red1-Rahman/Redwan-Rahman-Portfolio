@@ -88,7 +88,7 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .cv-dropdown-button {
@@ -326,7 +326,7 @@ li:hover {
   flex-wrap: wrap;
 }
 
-/* Mobile view adjustments */
+  /* Mobile view adjustments */
 @media (max-width: 480px) {
   .footer {
     flex-direction: column;
@@ -339,9 +339,9 @@ li:hover {
   }
 
   .cv-dropdown-container {
-    position: relative;
-    top: auto;
-    left: auto;
+    position: static;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
   }
 
