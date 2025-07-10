@@ -36,35 +36,35 @@ function MainContent() {
 
   return (
     <div className="App">
-      <header className="hero">
-        <div className="cv-dropdown-container">
-          <button className="cv-dropdown-button" onClick={toggleDropdown}>
-            Download CV ▼
-          </button>
-          {isDropdownOpen && (
-            <div className="cv-dropdown-menu">
-              <button 
-                className="cv-dropdown-item" 
-                onClick={() => handleCVDownload('aiml')}
-              >
-                AI/ML Developer
-              </button>
-              <button 
-                className="cv-dropdown-item" 
-                onClick={() => handleCVDownload('quantum')}
-              >
-                Quantum Developer
-              </button>
-              <button 
-                className="cv-dropdown-item" 
-                onClick={() => handleCVDownload('game')}
-              >
-                Game Developer
-              </button>
-            </div>
-          )}
-        </div>
+      <div className="cv-dropdown-container">
+        <button className="cv-dropdown-button" onClick={toggleDropdown}>
+          Download CV ▼
+        </button>
+        {isDropdownOpen && (
+          <div className="cv-dropdown-menu">
+            <button 
+              className="cv-dropdown-item" 
+              onClick={() => handleCVDownload('aiml')}
+            >
+              AI/ML Developer
+            </button>
+            <button 
+              className="cv-dropdown-item" 
+              onClick={() => handleCVDownload('quantum')}
+            >
+              Quantum Developer
+            </button>
+            <button 
+              className="cv-dropdown-item" 
+              onClick={() => handleCVDownload('game')}
+            >
+              Game Developer
+            </button>
+          </div>
+        )}
+      </div>
 
+      <header className="hero">
         <div className="profile-container">
           <img
             src="/assets/images/My Formal Pic.jpg"
