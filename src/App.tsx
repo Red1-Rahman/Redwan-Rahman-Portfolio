@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
 import Articles from './pages/Articles';
@@ -7,9 +7,64 @@ import { generateRandomColors } from './utils/randomColors';
 import './App.css';
 
 function MainContent() {
+  const [showMessage, setShowMessage] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleCVDownload = (type) => {
+    setIsDropdownOpen(false);
+    
+    if (type === 'quantum') {
+      // Download the quantum CV
+      const link = document.createElement('a');
+      link.href = '/assets/CV/Redwan Rahman Quantum CV.pdf';
+      link.download = 'Redwan Rahman Quantum CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // Show message for other types
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 2000);
+    }
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <div className="App">
       <header className="hero">
+        <div className="cv-dropdown-container">
+          <button className="cv-dropdown-button" onClick={toggleDropdown}>
+            Download CV ▼
+          </button>
+          {isDropdownOpen && (
+            <div className="cv-dropdown-menu">
+              <button 
+                className="cv-dropdown-item" 
+                onClick={() => handleCVDownload('aiml')}
+              >
+                AI/ML Developer
+              </button>
+              <button 
+                className="cv-dropdown-item" 
+                onClick={() => handleCVDownload('quantum')}
+              >
+                Quantum Developer
+              </button>
+              <button 
+                className="cv-dropdown-item" 
+                onClick={() => handleCVDownload('game')}
+              >
+                Game Developer
+              </button>
+            </div>
+          )}
+        </div>
+
         <div className="profile-container">
           <img
             src="/assets/images/My Formal Pic.jpg"
@@ -24,6 +79,14 @@ function MainContent() {
           <Link to="/articles" className="articles-button">My Articles</Link>
           <Link to="/poems" className="poems-button">📜 Poems</Link>
         </div>
+
+        {showMessage && (
+          <div className="message-overlay">
+            <div className="message-content">
+              Content has not uploaded yet
+            </div>
+          </div>
+        )}
       </header>
 
       <section className="section" id="skills">
