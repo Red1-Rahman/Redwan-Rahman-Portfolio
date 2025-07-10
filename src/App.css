@@ -86,8 +86,8 @@
 /* CV Dropdown Styles */
 .cv-dropdown-container {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   z-index: 1001;
 }
 
