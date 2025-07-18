@@ -131,7 +131,6 @@ function MainContent() {
         <div className="hero-buttons">
           <Link to="/about" className="about-button">About Me</Link>
           <Link to="/articles" className="articles-button">My Articles</Link>
-          <Link to="/poems" className="poems-button">📜 Poems</Link>
         </div>
       </header>
 
