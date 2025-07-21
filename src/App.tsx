@@ -10,35 +10,43 @@ function MainContent() {
   const [showMessage, setShowMessage] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleCVDownload = (type: string) => {
-    setIsDropdownOpen(false);
-    
-    if (type === 'quantum') {
-      try {
-        // Download the quantum CV
-        const link = document.createElement('a');
-        link.href = '/assets/CV/Redwan Rahman Quantum CV.pdf';
-        link.download = 'Redwan Rahman Quantum CV.pdf';
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } catch (error) {
-        console.error('Error downloading CV:', error);
-        // Show message if download fails
-        setShowMessage(true);
-        setTimeout(() => {
-          setShowMessage(false);
-        }, 2000);
-      }
-    } else {
-      // Show message for other types (AI/ML and Game Developer)
+const handleCVDownload = (type: string) => {
+  setIsDropdownOpen(false);
+
+  if (type === 'quantum') {
+    try {
+      const link = document.createElement('a');
+      link.href = '/assets/CV/Redwan Rahman Quantum CV.pdf';
+      link.download = 'Redwan Rahman Quantum CV.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
       setShowMessage(true);
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 2000);
+      setTimeout(() => setShowMessage(false), 2000);
     }
-  };
+  } else if (type === 'aiml') {
+    try {
+      const link = document.createElement('a');
+      link.href = '/assets/CV/Redwan Rahman AIML CV.pdf';
+      link.download = 'Redwan Rahman AIML CV.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 2000);
+    }
+  } else {
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 2000);
+  }
+};
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
