@@ -195,104 +195,114 @@ const handleCVDownload = (type: string) => {
         </ul>
       </section>
 
-      <section className="section" id="certificates">
-        <h2>Certificates</h2>
-        <ul>
-          <li>
-            <a
-              href="https://coursera.org/share/74044cdebfe2d219bd2848b9e2131dd1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Data Science Math Skills by Duke University
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://coursera.org/share/3ec38798eb25b6d1fd4f02318a7c9564"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Python Basics by University of Michigan
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://coursera.org/share/6466ec5da646189a9c0be0a282599bcb"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Machine Learning with Python by IBM
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-machine-learning"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Intro to Machine Learning by Kaggle
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-game-ai-and-reinforcement-learning"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Intro to Game AI and Reinforcement Learning by Kaggle
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://cursa.app/en/my-certificate/cert0b72aa6bd33ff447f2a2d3a10a4058e2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Intro to C++ Game Programming
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://cursa.app/en/my-certificate/cert19bec9533d2b4e0aee65ca50cf316ba9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Unreal Engine 5 Complete Tutorials
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://coursera.org/share/bbd7cc45b7923ab8aebe6590a6d46db1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Deep Learning with Keras and TensorFlow by IBM
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://coursera.org/share/18e299932ad4ef3b99c044574f155265"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
-            >
-              Feature Engineering by Google Cloud
-            </a>
-          </li>
-          <li>GALACTIC PROBLEM SOLVER by NASA International Space Apps Challenge</li>
-          <li>Finalist, Unlock The Algorithm Spring 2024 by Daffodil International University</li>
-          <li>Finalist, Take Off programming contest 2022 by Daffodil International University</li>
-        </ul>
-      </section>
+<section className="section" id="certificates">
+  <h2>Certificates</h2>
+  <ul>
+    <li>
+      <a
+        href="https://coursera.org/share/74044cdebfe2d219bd2848b9e2131dd1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Data Science Math Skills by Duke University
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://coursera.org/share/3ec38798eb25b6d1fd4f02318a7c9564"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Python Basics by University of Michigan
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://coursera.org/share/6466ec5da646189a9c0be0a282599bcb"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Machine Learning with Python by IBM
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-machine-learning"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Intro to Machine Learning by Kaggle
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-game-ai-and-reinforcement-learning"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Intro to Game AI and Reinforcement Learning by Kaggle
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://cursa.app/en/my-certificate/cert0b72aa6bd33ff447f2a2d3a10a4058e2"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Intro to C++ Game Programming
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://cursa.app/en/my-certificate/cert19bec9533d2b4e0aee65ca50cf316ba9"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Unreal Engine 5 Complete Tutorials
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://coursera.org/share/bbd7cc45b7923ab8aebe6590a6d46db1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Deep Learning with Keras and TensorFlow by IBM
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://coursera.org/share/18e299932ad4ef3b99c044574f155265"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        Feature Engineering by Google Cloud
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://pennylane.ai/profile/Redwan_Rahman?certificate=pennylane-certificate-womanium-wiser-lcu-2025"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="certificate-link"
+      >
+        PennyLane LCU Challenge at the Womanium & Wiser Quantum Program 2025
+      </a>
+    </li>
+    <li>GALACTIC PROBLEM SOLVER by NASA International Space Apps Challenge</li>
+    <li>Finalist, Unlock The Algorithm Spring 2024 by Daffodil International University</li>
+    <li>Finalist, Take Off programming contest 2022 by Daffodil International University</li>
+  </ul>
+</section>
 
       <section className="section" id="scholarships">
         <h2>Scholarships</h2>
