@@ -171,7 +171,7 @@ const handleCVDownload = (type: string) => {
         <h2>Projects</h2>
         <ul>
           <li>ML based astronomical object classifier</li>
-          <li>ML based MRI brain tumor detector</li>
+          <li>ML based MRI brain tumor detector and classifier(4 classes)</li>
           <li>
             <a
               href="https://connect-4-with-ai-opponent.netlify.app"
