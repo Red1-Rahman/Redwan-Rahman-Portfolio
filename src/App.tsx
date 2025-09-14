@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState, Suspense, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { generateRandomColors } from './utils/randomColors';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -7,12 +7,18 @@ import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 
 // Lazy load pages for better performance
-const About = React.lazy(() => import('./pages/About'));
-const Articles = React.lazy(() => import('./pages/Articles'));
-const Poems = React.lazy(() => import('./pages/poems'));
-const AiMlDeveloper = React.lazy(() => import('./pages/AiMlDeveloper'));
-const GameDeveloper = React.lazy(() => import('./pages/GameDeveloper'));
-const QuantumProgrammer = React.lazy(() => import('./pages/QuantumProgrammer'));
+const preloadAbout = () => import('./pages/About');
+const About = React.lazy(preloadAbout);
+const preloadArticles = () => import('./pages/Articles');
+const Articles = React.lazy(preloadArticles);
+const preloadPoems = () => import('./pages/poems');
+const Poems = React.lazy(preloadPoems);
+const preloadAiMlDeveloper = () => import('./pages/AiMlDeveloper');
+const AiMlDeveloper = React.lazy(preloadAiMlDeveloper);
+const preloadGameDeveloper = () => import('./pages/GameDeveloper');
+const GameDeveloper = React.lazy(preloadGameDeveloper);
+const preloadQuantumProgrammer = () => import('./pages/QuantumProgrammer');
+const QuantumProgrammer = React.lazy(preloadQuantumProgrammer);
 
 // Loading component
 const LoadingSpinner = () => (
@@ -26,7 +32,7 @@ function MainContent() {
   const [showMessage, setShowMessage] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-const handleCVDownload = (type: string) => {
+const handleCVDownload = useCallback((type: string) => {
   setIsDropdownOpen(false);
 
   if (type === 'quantum') {
@@ -61,12 +67,12 @@ const handleCVDownload = (type: string) => {
     setShowMessage(true);
     setTimeout(() => setShowMessage(false), 2000);
   }
-};
+}, []);
 
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const toggleDropdown = useCallback(() => {
+    setIsDropdownOpen(prev => !prev);
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -151,13 +157,16 @@ const handleCVDownload = (type: string) => {
             src="/assets/images/My Formal Pic.jpg"
             alt="Redwan Rahman"
             className="profile-picture"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
         <h1>Redwan Rahman</h1>
         <p>AI/ML Developer | Game Developer | Quantum Programmer</p>
         <div className="hero-buttons">
-          <Link to="/about" className="about-button">About Me</Link>
-          <Link to="/articles" className="articles-button">My Articles</Link>
+          <Link to="/about" className="about-button" onMouseEnter={preloadAbout}>About Me</Link>
+          <Link to="/articles" className="articles-button" onMouseEnter={preloadArticles}>My Articles</Link>
+          <a href="mailto:rahman22205101127@diu.edu.bd" className="poems-button">Email</a>
         </div>
       </header>
 
@@ -166,21 +175,21 @@ const handleCVDownload = (type: string) => {
         <p className="section-subtitle">Explore my specialized domains</p>
         
         <div className="domain-navigation">
-          <Link to="/ai-ml" className="domain-nav-card ai-ml">
+          <Link to="/ai-ml" className="domain-nav-card ai-ml" onMouseEnter={preloadAiMlDeveloper}>
             <div className="domain-icon">🤖</div>
             <h3>AI/ML Developer</h3>
             <p>Machine Learning • Deep Learning • Data Science</p>
             <div className="nav-arrow">→</div>
           </Link>
           
-          <Link to="/game-dev" className="domain-nav-card game-dev">
+          <Link to="/game-dev" className="domain-nav-card game-dev" onMouseEnter={preloadGameDeveloper}>
             <div className="domain-icon">🎮</div>
             <h3>Game Developer</h3>
             <p>Unreal Engine • Unity • Interactive Experiences</p>
             <div className="nav-arrow">→</div>
           </Link>
           
-          <Link to="/quantum" className="domain-nav-card quantum">
+          <Link to="/quantum" className="domain-nav-card quantum" onMouseEnter={preloadQuantumProgrammer}>
             <div className="domain-icon">⚛️</div>
             <h3>Quantum Programmer</h3>
             <p>Quantum Computing • QML • Astrophysics Research</p>
@@ -197,6 +206,7 @@ const handleCVDownload = (type: string) => {
           <li>President: DIU Astrophysics Center (Student Forum)</li>
         </ul>
       </section>
+
 
       <section className="section" id="projects">
         <h2>Projects</h2>

@@ -1,7 +1,7 @@
 /* Domain Pages Styling */
 .domain-container {
   min-height: 100vh;
-  background: var(--bg-primary);
+  background: var(--domain-bg);
   color: var(--text-primary);
   padding: 0;
 }

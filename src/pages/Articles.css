@@ -51,25 +51,25 @@
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background: var(--button-bg);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #2563eb, #0ea5e9, #14b8a6); /* blue → skyblue → teal */
+  color: #ffffff;
   text-decoration: none;
   border-radius: 25px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255,255,255,0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(5px);
 }
 
 .back-button:hover {
-  background: var(--button-hover);
+  background: linear-gradient(135deg, #1e40af, #0ea5e9, #0f766e); /* deeper navy/skyblue/teal */
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px var(--shadow-dark);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
 }
 
 .articles-header h1 {
   font-size: 3em;
   margin: 0 0 10px 0;
-  background: linear-gradient(45deg, #ee7752, #23a6d5, #23d5ab);
+  background: linear-gradient(45deg, #0ea5e9, #22d3ee, #14b8a6); /* blue → cyan → teal */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -120,7 +120,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(45deg, #ee7752, #23a6d5, #23d5ab);
+  background: linear-gradient(45deg, #1e3a8a, #0ea5e9, #14b8a6); /* navy → skyblue → teal */
   background-size: 300% 300%;
   animation: gradientMove 3s ease infinite;
 }
@@ -177,8 +177,8 @@
 }
 
 .tag {
-  background: linear-gradient(45deg, #ee7752, #23a6d5);
-  color: var(--card-bg);
+  background: linear-gradient(45deg, #38bdf8, #14b8a6); /* skyblue → teal */
+  color: #ffffff; /* high contrast on blue/teal gradients */
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.8em;
@@ -207,25 +207,25 @@
 }
 
 .pdf-button {
-  background: linear-gradient(45deg, #23a6d5, #23d5ab);
-  color: var(--card-bg);
+  background: linear-gradient(45deg, #2563eb, #06b6d4); /* blue → cyan */
+  color: #ffffff;
 }
 
 .pdf-button:hover {
-  background: linear-gradient(45deg, #1e8bb3, #1eb892);
+  background: linear-gradient(45deg, #1e40af, #0891b2); /* deeper blue/cyan */
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(35, 166, 213, 0.3);
 }
 
 .download-button {
-  background: linear-gradient(45deg, #ee7752, #f4a261);
-  color: var(--card-bg);
+  background: linear-gradient(45deg, #0a2540, #14b8a6); /* navy → teal */
+  color: #ffffff;
 }
 
 .download-button:hover {
-  background: linear-gradient(45deg, #e85d3d, #f39c12);
+  background: linear-gradient(45deg, #0b2a4a, #0f766e); /* deeper navy/teal */
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(238, 119, 82, 0.3);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
 }
 
 .articles-footer {

@@ -181,11 +181,11 @@
 
 .hero {
   text-align: center;
-  padding: 80px 40px;
+  padding: 64px 32px;
   background: var(--glass-bg);
   color: var(--text-primary);
   border-radius: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
@@ -195,13 +195,7 @@
     inset 0 1px 0 var(--shadow-light);
 }
 
-.hero:hover {
-  transform: scale(1.02);
-  box-shadow: 
-    0 16px 40px var(--shadow-dark),
-    inset 0 1px 0 var(--shadow-light);
-  background: var(--button-hover);
-}
+/* Subtle hover avoided for calmer, professional feel */
 
 .hero h1 {
   font-size: 3.5em;
@@ -223,6 +217,31 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
+}
+
+/* Dark mode: subtle glaze sweep over hero, akin to Articles header */
+[data-theme="dark"] .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(100deg, rgba(255,255,255,0) 47%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0) 53%);
+  pointer-events: none;
+  animation: heroGlaze 20s linear infinite 3s; /* slightly faster cadence */
+}
+
+@keyframes heroGlaze {
+  0% { transform: translateX(-120%); opacity: 0.4; }
+  5% { opacity: 0.5; }
+  15% { transform: translateX(0%); opacity: 0.5; }
+  20% { opacity: 0.35; }
+  40% { transform: translateX(120%); opacity: 0.25; }
+  41% { opacity: 0; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="dark"] .hero::before { animation: none; }
 }
 
 .achievement-highlights {
@@ -397,8 +416,8 @@
 }
 
 .section {
-  margin-bottom: 50px;
-  padding: 32px 36px;
+  margin-bottom: 36px;
+  padding: 28px 28px;
   background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 8px 32px var(--shadow-dark);
@@ -422,11 +441,11 @@
 
 .section h2 {
   color: var(--text-primary);
-  font-size: 2.1em;
+  font-size: 1.9em;
   font-weight: 700;
   border-bottom: 3px solid var(--text-accent);
-  padding-bottom: 16px;
-  margin-bottom: 28px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -459,10 +478,7 @@
   border-left: 4px solid var(--text-accent);
 }
 
-.section:hover {
-  transform: translateY(-8px);
-  background: var(--button-hover);
-}
+/* Reduce motion for professional tone */
 
 .section:nth-child(3n+1):hover {
   box-shadow: 0 16px 32px var(--shadow-dark);
@@ -955,6 +971,7 @@ body {
   margin-top: 20px;
 }
 
+
 .about-button,
 .articles-button,
 .poems-button {
@@ -1247,3 +1264,5 @@ body {
               border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Removed global App glaze to keep focus on hero only */
