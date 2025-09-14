@@ -65,8 +65,6 @@ const QuantumProgrammer: React.FC = () => {
               <h3>Programming Languages</h3>
               <div className="tech-tags">
                 <span className="tech-tag primary">Python</span>
-                <span className="tech-tag">QASM</span>
-                <span className="tech-tag">Julia</span>
               </div>
             </div>
             <div className="tech-category">

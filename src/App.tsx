@@ -189,6 +189,15 @@ const handleCVDownload = (type: string) => {
         </div>
       </section>
 
+      <section className="section" id="experience">
+        <h2>Experience</h2>
+        <ul>
+          <li>Mentor: QBangladesh</li>
+          <li>Mentor: AR/VR and Game Development Lab_DIU</li>
+          <li>President: DIU Astrophysics Center (Student Forum)</li>
+        </ul>
+      </section>
+
       <section className="section" id="projects">
         <h2>Projects</h2>
         <ul>
@@ -272,6 +281,7 @@ const handleCVDownload = (type: string) => {
         Machine Learning with Python by IBM
       </a>
     </li>
+    <li>AWS Academy Graduate - AWS Academy Machine Learning Foundations by Amazon Web Services (AWS)</li>
     <li>
       <a
         href="https://www.kaggle.com/learn/certification/redwanrahman1127/intro-to-machine-learning"
@@ -332,6 +342,10 @@ const handleCVDownload = (type: string) => {
         Feature Engineering by Google Cloud
       </a>
     </li>
+    <li>Industry Project Certificate: Quantum Walks and Monte Carlo by The Washington Institute for STEM, Entrepreneurship and Research</li>
+    <li>QWorld QBronze - Quantum Computing Fundamentals</li>
+    <li>QURECA Basic Rules of Quantum Physics - Quantum Physics Foundation</li>
+    <li>QURECA Quantum Myths - Quantum Misconceptions & Facts</li>
     <li>
       <a
         href="https://pennylane.ai/profile/Redwan_Rahman?certificate=pennylane-certificate-womanium-wiser-lcu-2025"

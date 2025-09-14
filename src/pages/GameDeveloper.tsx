@@ -15,6 +15,22 @@ const GameDeveloper: React.FC = () => {
       </header>
 
       <div className="domain-content">
+        <section className="experience">
+          <h2>Experience</h2>
+          <div className="cert-list">
+            <div className="cert-item experience-item">
+              <div className="experience-content">
+                <h3>Mentor, Former General Secretary and Vice-President<br/>AR/VR and Game Development Lab_DIU</h3>
+              </div>
+              <img 
+                src="/assets/Banners/ARVR banner.jpg" 
+                alt="AR/VR and Game Development Lab Banner" 
+                className="experience-banner"
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="expertise-overview">
           <h2>Expertise Overview</h2>
           <div className="expertise-grid">
