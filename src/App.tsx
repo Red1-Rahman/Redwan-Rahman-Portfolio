@@ -1,12 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import About from './pages/About';
-import Articles from './pages/Articles';
-import Poems from './pages/poems';
 import { generateRandomColors } from './utils/randomColors';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle';
+import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
+
+// Lazy load pages for better performance
+const About = React.lazy(() => import('./pages/About'));
+const Articles = React.lazy(() => import('./pages/Articles'));
+const Poems = React.lazy(() => import('./pages/poems'));
+const AiMlDeveloper = React.lazy(() => import('./pages/AiMlDeveloper'));
+const GameDeveloper = React.lazy(() => import('./pages/GameDeveloper'));
+const QuantumProgrammer = React.lazy(() => import('./pages/QuantumProgrammer'));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="loading-container">
+    <div className="loading-spinner"></div>
+    <p>Loading...</p>
+  </div>
+);
 
 function MainContent() {
   const [showMessage, setShowMessage] = useState(false);
@@ -148,27 +162,30 @@ const handleCVDownload = (type: string) => {
       </header>
 
       <section className="section" id="skills">
-        <h2>Skills</h2>
-
-        <div className="skill-category">
-          <h3>AI/ML Development</h3>
-          <p>Machine Learning, Deep Learning, Data Science, Apache Beam, Dataflow, Feature Engineering</p>
-          <h4>Tech Stack:</h4>
-          <p><strong>Python, Pandas, TensorFlow, PyTorch, Scikit-learn, Matplotlib, Seaborn, Django, Pickle, Keras</strong></p>
-        </div>
-
-        <div className="skill-category">
-          <h3>Game Development</h3>
-          <p>Game Ideation, Brainstorming, Game Programming (C#, C++, Python), Game Testing, UE Blueprint, Niagara VFX</p>
-          <h4>Engines:</h4>
-          <p><strong>Unreal Engine, Unity</strong></p>
-        </div>
-
-        <div className="skill-category">
-          <h3>Quantum Programming</h3>
-          <p>Quantum Computing, Quantum Programming, Quantum Machine Learning (QML), Basics of Quantum Physics</p>
-          <h4>Tools:</h4>
-          <p><strong>Qiskit, PennyLane</strong></p>
+        <h2>My Expertise</h2>
+        <p className="section-subtitle">Explore my specialized domains</p>
+        
+        <div className="domain-navigation">
+          <Link to="/ai-ml" className="domain-nav-card ai-ml">
+            <div className="domain-icon">🤖</div>
+            <h3>AI/ML Developer</h3>
+            <p>Machine Learning • Deep Learning • Data Science</p>
+            <div className="nav-arrow">→</div>
+          </Link>
+          
+          <Link to="/game-dev" className="domain-nav-card game-dev">
+            <div className="domain-icon">🎮</div>
+            <h3>Game Developer</h3>
+            <p>Unreal Engine • Unity • Interactive Experiences</p>
+            <div className="nav-arrow">→</div>
+          </Link>
+          
+          <Link to="/quantum" className="domain-nav-card quantum">
+            <div className="domain-icon">⚛️</div>
+            <h3>Quantum Programmer</h3>
+            <p>Quantum Computing • QML • Astrophysics Research</p>
+            <div className="nav-arrow">→</div>
+          </Link>
         </div>
       </section>
 
@@ -384,16 +401,23 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<MainContent />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/poems" element={<Poems />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <Router>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<MainContent />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/articles" element={<Articles />} />
+              <Route path="/poems" element={<Poems />} />
+              <Route path="/ai-ml" element={<AiMlDeveloper />} />
+              <Route path="/game-dev" element={<GameDeveloper />} />
+              <Route path="/quantum" element={<QuantumProgrammer />} />
+            </Routes>
+          </Suspense>
+        </Router>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
