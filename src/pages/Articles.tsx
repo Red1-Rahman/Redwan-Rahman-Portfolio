@@ -70,10 +70,9 @@ const Articles: React.FC = () => {
         ))}
       </div>
 
-      <div className="articles-footer">
+      <footer className="articles-footer">
         <p>More articles coming soon...</p>
-        <Link to="/about" className="about-link">Learn more about my research interests</Link>
-      </div>
+      </footer>
     </div>
   );
 };

@@ -1,0 +1,134 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 200px; /* Position to the left of CV dropdown */
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-track {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .theme-toggle-track {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+.theme-toggle-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .theme-toggle-thumb {
+  transform: translateX(30px);
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.theme-toggle-icon {
+  color: #fbbf24;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .theme-toggle-icon {
+  color: #60a5fa;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 15px;
+    right: 170px; /* Adjust for mobile CV dropdown */
+  }
+  
+  .theme-toggle-track {
+    width: 50px;
+    height: 25px;
+    border-radius: 12.5px;
+  }
+  
+  .theme-toggle-thumb {
+    width: 21px;
+    height: 21px;
+  }
+  
+  [data-theme="dark"] .theme-toggle-thumb {
+    transform: translateX(25px);
+  }
+  
+  .theme-toggle-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    right: 15px;
+    top: 80px; /* Move below CV dropdown on very small screens */
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle-track,
+  .theme-toggle-thumb,
+  .theme-toggle-icon {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .theme-toggle {
+    border: 2px solid;
+  }
+  
+  .theme-toggle-track {
+    border: 1px solid;
+  }
+}

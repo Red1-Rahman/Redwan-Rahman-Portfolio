@@ -1,13 +1,76 @@
+:root {
+  /* Light theme variables */
+  --bg-primary: linear-gradient(45deg, #3498db, #2980b9, #1abc9c, #16a085, #2c3e50, #34495e);
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-accent: #3498db;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --button-bg: rgba(255, 255, 255, 0.2);
+  --button-hover: rgba(255, 255, 255, 0.3);
+  --code-bg: rgba(240, 240, 240, 0.8);
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+  --bg-primary: linear-gradient(45deg, #0f172a, #1e293b, #334155, #475569, #64748b, #94a3b8);
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-accent: #60a5fa;
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-light: rgba(255, 255, 255, 0.05);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --card-bg: rgba(15, 23, 42, 0.8);
+  --button-bg: rgba(30, 41, 59, 0.6);
+  --button-hover: rgba(51, 65, 85, 0.8);
+  --code-bg: rgba(30, 41, 59, 0.9);
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-primary);
+  background-size: 400% 400%;
+  animation: gradientShift 90s ease infinite;
+  margin: 40px auto;
+  color: var(--text-primary);
+  min-height: 100vh;
+  box-sizing: border-box;
+  line-height: 1.7;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5;
-  color: #333;
-  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 code {

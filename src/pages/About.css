@@ -7,26 +7,28 @@
 .back-button {
   display: inline-block;
   margin-bottom: 30px;
-  color: #666;
+  color: var(--text-secondary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .back-button:hover {
-  color: #333;
+  color: var(--text-primary);
 }
 
 .about-content {
-  background: white;
+  background: var(--card-bg);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px var(--shadow-dark);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
 }
 
 .about-content h1 {
   font-size: 2.5em;
   margin-bottom: 30px;
-  color: #2a2a2a;
+  color: var(--text-primary);
 }
 
 .about-section {
@@ -34,13 +36,13 @@
 }
 
 .about-section h2 {
-  color: #444;
+  color: var(--text-primary);
   margin-bottom: 15px;
   font-size: 1.5em;
 }
 
 .about-section p {
   line-height: 1.6;
-  color: #555;
+  color: var(--text-secondary);
   font-size: 1.1em;
 }

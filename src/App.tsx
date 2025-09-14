@@ -4,6 +4,8 @@ import About from './pages/About';
 import Articles from './pages/Articles';
 import Poems from './pages/poems';
 import { generateRandomColors } from './utils/randomColors';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { ThemeToggle } from './components/ThemeToggle';
 import './App.css';
 
 function MainContent() {
@@ -72,6 +74,9 @@ const handleCVDownload = (type: string) => {
 
   return (
     <div className="App">
+      {/* Theme Toggle */}
+      <ThemeToggle />
+      
       {/* CV Dropdown Button */}
       <div className="cv-dropdown-container">
         <button 
@@ -149,38 +154,50 @@ const handleCVDownload = (type: string) => {
           <h3>AI/ML Development</h3>
           <p>Machine Learning, Deep Learning, Data Science, Apache Beam, Dataflow, Feature Engineering</p>
           <h4>Tech Stack:</h4>
-          <p>Python, Pandas, TensorFlow, PyTorch, Scikit-learn, Matplotlib, Seaborn, Django, Pickle, Keras</p>
+          <p><strong>Python, Pandas, TensorFlow, PyTorch, Scikit-learn, Matplotlib, Seaborn, Django, Pickle, Keras</strong></p>
         </div>
 
         <div className="skill-category">
           <h3>Game Development</h3>
           <p>Game Ideation, Brainstorming, Game Programming (C#, C++, Python), Game Testing, UE Blueprint, Niagara VFX</p>
           <h4>Engines:</h4>
-          <p>Unreal Engine, Unity</p>
+          <p><strong>Unreal Engine, Unity</strong></p>
         </div>
 
         <div className="skill-category">
           <h3>Quantum Programming</h3>
           <p>Quantum Computing, Quantum Programming, Quantum Machine Learning (QML), Basics of Quantum Physics</p>
           <h4>Tools:</h4>
-          <p>Qiskit, PennyLane</p>
+          <p><strong>Qiskit, PennyLane</strong></p>
         </div>
       </section>
 
       <section className="section" id="projects">
         <h2>Projects</h2>
         <ul>
-          <li>ML based astronomical object classifier</li>
-          <li>ML based MRI brain tumor detector and classifier(4 classes)</li>
           <li>
             <a
-              href="https://connect-4-with-ai-opponent.netlify.app"
+              href="https://itch.io/jam/quantum-game-jam-2025/rate/3867893"
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
             >
-              Some board games with AI opponents
+              DraQ: Astro-Escape (under development)
             </a>
+            <br />
+            <span className="project-badge">Quantum GameJam</span>
+            <span className="project-badge">Unreal Engine 5</span>
+          </li>
+          <li>
+            <strong>Gradio-Based MBTI Personality Prediction Web App Using an Ensemble Model</strong>
+            <br />
+            <span className="project-accuracy">91.05% Accuracy</span>
+          </li>
+          <li>ML based astronomical object classifier</li>
+          <li>
+            <strong>MRI-Based Brain Tumor Diagnosis Using YOLOv8 for Detection and DenseNet201 for Classification</strong>
+            <br />
+            <span className="project-accuracy">mAP50: 88.2%, Accuracy: 86.05%</span>
           </li>
           <li>
             <a
@@ -190,6 +207,16 @@ const handleCVDownload = (type: string) => {
               className="project-link"
             >
               Quantum Galton Board Generator
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://connect-4-with-ai-opponent.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              Some board games with AI opponents
             </a>
           </li>
         </ul>
@@ -357,14 +384,16 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainContent />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/poems" element={<Poems />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/poems" element={<Poems />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

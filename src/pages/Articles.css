@@ -9,15 +9,14 @@
   text-align: center;
   margin-bottom: 50px;
   padding: 40px 20px;
-  background: linear-gradient(135deg,
-      rgba(26, 26, 26, 0.9) 0%,
-      rgba(42, 42, 42, 0.8) 100%);
-  color: white;
+  background: var(--glass-bg);
+  color: var(--text-primary);
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow-dark);
 }
 
 .articles-header::before {
@@ -52,19 +51,19 @@
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--button-bg);
+  color: var(--text-primary);
   text-decoration: none;
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(5px);
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--button-hover);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px var(--shadow-dark);
 }
 
 .articles-header h1 {
@@ -90,15 +89,28 @@
 }
 
 .article-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px var(--shadow-dark);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
+}
+
+.article-card h3 {
+  color: var(--text-primary);
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.article-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .article-card::before {
@@ -129,8 +141,8 @@
 
 .article-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 40px var(--shadow-dark);
+  background: var(--button-hover);
 }
 
 .article-content {
@@ -139,20 +151,20 @@
 
 .article-title {
   font-size: 1.5em;
-  color: #2a2a2a;
+  color: var(--text-primary);
   margin-bottom: 10px;
   line-height: 1.3;
 }
 
 .article-date {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.9em;
   margin-bottom: 15px;
   font-weight: 500;
 }
 
 .article-description {
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -166,7 +178,7 @@
 
 .tag {
   background: linear-gradient(45deg, #ee7752, #23a6d5);
-  color: white;
+  color: var(--card-bg);
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.8em;
@@ -196,7 +208,7 @@
 
 .pdf-button {
   background: linear-gradient(45deg, #23a6d5, #23d5ab);
-  color: white;
+  color: var(--card-bg);
 }
 
 .pdf-button:hover {
@@ -207,7 +219,7 @@
 
 .download-button {
   background: linear-gradient(45deg, #ee7752, #f4a261);
-  color: white;
+  color: var(--card-bg);
 }
 
 .download-button:hover {
@@ -218,29 +230,12 @@
 
 .articles-footer {
   text-align: center;
-  padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
 }
 
 .articles-footer p {
-  margin-bottom: 15px;
-  color: #666;
-  font-size: 1.1em;
-}
-
-.about-link {
-  color: #23a6d5;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.about-link:hover {
-  color: #1e8bb3;
-  text-decoration: underline;
+  margin: 0;
+  color: var(--text-secondary);
 }
 
 /* Responsive Design */

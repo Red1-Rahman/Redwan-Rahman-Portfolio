@@ -1,12 +1,4 @@
 export const generateRandomColors = () => {
-  const hue1 = Math.floor(Math.random() * 360);
-  const hue2 = (hue1 + 120) % 360;
-  const hue3 = (hue2 + 120) % 360;
-
-  return `linear-gradient(
-    45deg,
-    hsla(${hue1}, 70%, 80%, 0.8),
-    hsla(${hue2}, 70%, 80%, 0.8),
-    hsla(${hue3}, 70%, 80%, 0.8)
-  )`;
+  // Professional blue-cyan-navy blue-teal gradient
+  return 'linear-gradient(135deg, #2196F3 0%, #00BCD4 25%, #1A237E 75%, #009688 100%)';
 };
