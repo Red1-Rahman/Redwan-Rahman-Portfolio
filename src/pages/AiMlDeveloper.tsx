@@ -100,11 +100,18 @@ const AiMlDeveloper: React.FC = () => {
                 <span className="tech-used">YOLOv8 • DenseNet201 • PyTorch • Medical Imaging</span>
               </div>
             </div>
-            <div className="project-card">
-              <h3>Astro AI</h3>
-              <p>AI-powered astronomy application for astronomical analysis and insights using machine learning.</p>
+            <div className="project-card featured">
+              <h3>Astro-AI: Unified AI-Powered Astrophysics Analysis Platform</h3>
+              <p>
+                Multi-domain astronomy platform integrating 21cmFAST EoR simulations (z ~ 6–20), JWST spectroscopy pipeline, 
+                Bagpipes SED fitting, cluster environment analysis, and AI-assisted reporting via DeepSeek R1 for high-redshift 
+                cosmology and galaxy evolution studies.
+              </p>
               <div className="project-stats">
-                <span className="tech-used">Python • Streamlit • Machine Learning • Astronomy</span>
+                <span className="tech-used">
+                  Python • Streamlit • 21cmFAST • JWST Pipeline • Bagpipes • Astropy • 
+                  DeepSeek R1 • NumPy • Pandas • Matplotlib
+                </span>
               </div>
               <a 
                 href="https://r3ns-astro-ai.streamlit.app/" 

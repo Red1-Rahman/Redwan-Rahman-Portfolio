@@ -236,8 +236,17 @@ const handleCVDownload = useCallback((type: string) => {
               rel="noopener noreferrer"
               className="project-link"
             >
-              Astro AI
+              Astro-AI: Unified AI-Powered Astrophysics Analysis Platform
             </a>
+            <br />
+            <strong>Integrated platform for 21cmFAST EoR simulations, JWST spectroscopy, Bagpipes SED fitting, and AI-driven report generation</strong>
+            <br />
+            <span className="project-badge">Python</span>
+            <span className="project-badge">Streamlit</span>
+            <span className="project-badge">21cmFAST</span>
+            <span className="project-badge">JWST Pipeline</span>
+            <span className="project-badge">Bagpipes</span>
+            <span className="project-badge">DeepSeek R1</span>
           </li>
           <li>ML based astronomical object classifier</li>
           <li>
