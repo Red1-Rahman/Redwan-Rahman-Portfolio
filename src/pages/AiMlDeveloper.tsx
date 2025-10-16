@@ -101,6 +101,21 @@ const AiMlDeveloper: React.FC = () => {
               </div>
             </div>
             <div className="project-card">
+              <h3>Astro AI</h3>
+              <p>AI-powered astronomy application for astronomical analysis and insights using machine learning.</p>
+              <div className="project-stats">
+                <span className="tech-used">Python • Streamlit • Machine Learning • Astronomy</span>
+              </div>
+              <a 
+                href="https://r3ns-astro-ai.streamlit.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="project-link"
+              >
+                View Application →
+              </a>
+            </div>
+            <div className="project-card">
               <h3>ML Based Astronomical Object Classifier</h3>
               <p>Machine learning model for classifying astronomical objects from telescope data with high precision and automated feature extraction.</p>
               <div className="project-stats">
