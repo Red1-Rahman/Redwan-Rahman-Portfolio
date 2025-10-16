@@ -229,6 +229,16 @@ const handleCVDownload = useCallback((type: string) => {
             <br />
             <span className="project-accuracy">91.05% Accuracy</span>
           </li>
+          <li>
+            <a
+              href="https://r3ns-astro-ai.streamlit.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              Astro AI
+            </a>
+          </li>
           <li>ML based astronomical object classifier</li>
           <li>
             <strong>MRI-Based Brain Tumor Diagnosis Using YOLOv8 for Detection and DenseNet201 for Classification</strong>
